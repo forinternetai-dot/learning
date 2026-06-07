@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Learning Center | Premium ta'lim</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+    <div class="loader-text">LEARNING CENTER</div>
+    <div class="loader-progress"><div class="progress-fill"></div></div>
+</div>
+
+<!-- Main App -->
+<div id="app" style="display: none;">
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Learn<span class="gold-text">Center</span></div>
+            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#courses">Kurslar</a></li>
+                <li><a href="#about">Biz haqimizda</a></li>
+                <li><a href="#results">Natijalar</a></li>
+                <li><a href="#contact">Bog‘lanish</a></li>
+            </ul>
+            <div class="header-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active">UZ</button>
+                    <button class="lang-btn">RU</button>
+                </div>
+                <div class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </div>
+                <button id="loginRegisterBtn" class="btn-primary" style="padding: 8px 20px;">Kirish</button>
+                <div id="userInfo" style="display: none; align-items: center; gap: 12px;">
+                    <span id="userNameDisplay"></span>
+                    <button id="logoutBtn" class="btn-outline" style="padding: 6px 15px;">Chiqish</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-left">
+                    <div class="hero-tag">PREMIUM TA'LIM</div>
+                    <h1 class="hero-title">Kelajakni <span class="gold-text">bugun</span> qurish vaqti</h1>
+                    <p class="hero-desc">5000+ bitiruvchi, 96% ishga joylashish. Dunyo standartidagi dasturlar va mentorlar.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Kurslarni ko‘rish</button>
+                        <button class="btn-outline" id="registerPrompt">Bepul sinov</button>
+                    </div>
+                </div>
+                <div class="hero-image-area">
+                    <div class="hero-image-glass">
+                        <img src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Student" class="hero-img">
+                    </div>
+                    <div class="floating-shape shape-1"></div>
+                    <div class="floating-shape shape-2"></div>
+                    <div class="floating-badge badge-1">🏆 Top 1%</div>
+                    <div class="floating-badge badge-2">📈 98% muvaffaqiyat</div>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Courses Section with Filters -->
+        <section id="courses" class="services-section" style="background: var(--bg-dark);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">BIZNING KURSLAR</span>
+                    <h2>O‘rganishni <span class="gold-text">hozir boshlang</span></h2>
+                    <div class="gold-line"></div>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="filter-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <button class="filter-btn active" data-category="all">Barchasi</button>
+                    <button class="filter-btn" data-category="programming">Dasturlash</button>
+                    <button class="filter-btn" data-category="design">Dizayn</button>
+                    <button class="filter-btn" data-category="languages">Tillar</button>
+                    <button class="filter-btn" data-category="academic">Fanlar</button>
+                </div>
+                <div class="services-grid" id="coursesGrid"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container about-grid">
+                <div class="about-bio">
+                    <div class="bio-large">Biz <span class="gold-text">ta'limni</span> yangi bosqichga olib chiqamiz</div>
+                    <p>Learning Center – 2018-yilda tashkil etilgan, 5400+ bitiruvchi va 50+ mentor. Har bir kurs real loyihalar va karyera yordami bilan yakunlanadi.</p>
+                    <p>Hamkorlar: IT Park, EPAM, Google Developers Group. Sertifikatlar xalqaro darajada tan olinadi.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card"><div class="stat-number">7+</div><div class="stat-label">Yil tajriba</div></div>
+                    <div class="stat-card"><div class="stat-number">5400+</div><div class="stat-label">Bitiruvchilar</div></div>
+                    <div class="stat-card"><div class="stat-number">98%</div><div class="stat-label">Ishga joylashish</div></div>
+                    <div class="stat-card"><div class="stat-number">140+</div><div class="stat-label">Hamkor kompaniyalar</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (Our Results!) -->
+        <section id="results" class="testimonials-section" style="background: #111;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">BIZNING NATIJALAR</span>
+                    <h2>Raqamlarda <span class="gold-text">muvaffaqiyat</span></h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="services-grid" style="grid-template-columns: repeat(4,1fr);">
+                    <div class="stat-card"><div class="stat-number">142</div><div>Xalqaro sovrinlar</div></div>
+                    <div class="stat-card"><div class="stat-number">98%</div><div>Talabalar mamnuniyati</div></div>
+                    <div class="stat-card"><div class="stat-number">2500+</div><div>Real loyihalar</div></div>
+                    <div class="stat-card"><div class="stat-number">4.95</div><div>⭐ Reyting</div></div>
+                </div>
+                <div class="testimonial-slider swiper" style="margin-top: 60px;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide testimonial-slide"><i class="fas fa-quote-left quote-icon"></i><p>"Kurslarni tugatganimdan keyin 2 oy ichida IT Parkda ishga joylashdim."</p><div class="client-info"><h4>Jasur N.</h4><span>Full-stack dasturchi</span></div></div>
+                        <div class="swiper-slide testimonial-slide"><i class="fas fa-quote-left quote-icon"></i><p>"Dizayn kursi juda amaliy edi, hozir o‘z studiyamni ochdim."</p><div class="client-info"><h4>Madina R.</h4><span>UI/UX Designer</span></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">BIZ BILAN BOG‘LANING</span>
+                    <h2>Savollaringiz bormi?</h2>
+                    <div class="gold-line"></div>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group"><input type="text" placeholder="Ismingiz" required></div>
+                    <div class="form-group"><input type="email" placeholder="Email" required></div>
+                    <div class="form-group"><textarea rows="5" placeholder="Xabaringiz..."></textarea></div>
+                    <button type="submit" class="btn-primary">Yuborish <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><h3>Learn<span class="gold-text">Center</span></h3><p>Zamonaviy ta'lim markazi</p></div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#courses">Kurslar</a>
+                    <a href="#about">Biz haqimizda</a>
+                    <a href="#results">Natijalar</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://t.me/yourchannel" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://linkedin.com/company/yourpage" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 Learning Center. Barcha huquqlar himoyalangan.</div>
+        </div>
+    </footer>
+</div>
+
+<!-- Modals (Login, Course, Test) -->
+<div id="authModal" class="modal">
+    <div class="modal-content" style="max-width: 500px;">
+        <span class="modal-close">&times;</span>
+        <div id="authTabs" style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+            <button id="loginTab" class="auth-tab active">Kirish</button>
+            <button id="registerTab" class="auth-tab">Ro‘yxatdan o‘tish</button>
+        </div>
+        <div id="loginForm">
+            <div class="form-group"><input type="text" id="loginUsername" placeholder="Login" required></div>
+            <div class="form-group"><input type="password" id="loginPassword" placeholder="Parol" required></div>
+            <button id="doLoginBtn" class="btn-primary w-100">Kirish</button>
+        </div>
+        <div id="registerForm" style="display: none;">
+            <div class="form-group"><input type="text" id="regFullName" placeholder="To‘liq ismingiz" required></div>
+            <div class="form-group"><input type="text" id="regLogin" placeholder="Login (uniq)" required></div>
+            <div class="form-group"><input type="password" id="regPassword" placeholder="Parol" required></div>
+            <button id="doRegisterBtn" class="btn-primary w-100">Ro‘yxatdan o‘tish</button>
+        </div>
+    </div>
+</div>
+
+<div id="courseModal" class="modal">
+    <div class="modal-content" style="max-width: 700px;">
+        <span class="modal-close">&times;</span>
+        <div id="courseModalBody"></div>
+    </div>
+</div>
+
+<div id="testModal" class="modal">
+    <div class="modal-content" style="max-width: 800px;">
+        <span class="modal-close">&times;</span>
+        <div id="testContainer">
+            <h3 id="testCourseName"></h3>
+            <div id="questionArea"></div>
+            <div id="testControls"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

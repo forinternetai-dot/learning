@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Learning Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { background: var(--bg-dark); color: var(--text-white); font-family: 'Inter', sans-serif; }
+        .admin-container { max-width: 1400px; margin: 2rem auto; padding: 0 20px; }
+        .login-box { max-width: 400px; margin: 100px auto; background: var(--bg-card); padding: 30px; border-radius: 20px; }
+        .data-section { margin-top: 40px; display: none; }
+        table { width: 100%; overflow-x: auto; display: block; }
+        th, td { padding: 12px; border-bottom: 1px solid #333; text-align: left; }
+        .delete-btn { background: #c0392b; color: white; border: none; padding: 5px 12px; border-radius: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<div class="admin-container">
+    <div id="adminLogin" class="login-box">
+        <h2>Admin Panelga Kirish</h2>
+        <div class="form-group"><input type="text" id="adminUser" placeholder="Login"></div>
+        <div class="form-group"><input type="password" id="adminPass" placeholder="Parol"></div>
+        <button id="adminLoginBtn" class="btn-primary">Kirish</button>
+    </div>
+    <div id="adminData" class="data-section">
+        <h1><i class="fas fa-chart-line"></i> Admin Panel</h1>
+        <button id="logoutAdmin" class="btn-outline">Chiqish</button>
+        <h3>Foydalanuvchilar va natijalar</h3>
+        <div id="usersTable"></div>
+        <button id="clearAllData" class="btn-outline" style="margin-top:20px; background:#c0392b;">Barcha ma'lumotlarni tozalash</button>
+    </div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
